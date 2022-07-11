@@ -82,11 +82,9 @@ tabsButton.forEach(function (tab) {
   });
 });
 
-// section questions
-
-$(".accordion").accordion({
-  heightStyle: "content",
-  collapsible: true,
-  active:false,
-  icons: false,
-});
+document.querySelectorAll('.ac-header').forEach(element =>{
+  element.addEventListener('click', ()=>{
+    element.classList.toggle('ac-header--active')
+    element.nextElementSibling.classList.toggle('ac-panel--active')
+  })
+})

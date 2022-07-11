@@ -795,7 +795,6 @@ h1, h2, h3 {
 .questions__list-item {
   position: relative;
   margin-top: -1px;
-  padding: 41px 0;
   padding-right: 75px;
   justify-content: space-between;
   align-items: center;
@@ -827,6 +826,7 @@ h1, h2, h3 {
   right: 0;
   top: 50%;
   margin-top: -25px;
+  transition: transform .3s ease-in-out;
 }
 
 .questions__list-item svg ellipse,
@@ -844,30 +844,18 @@ h1, h2, h3 {
 
 .ac-header {
   width: 100%;
+  cursor: pointer;
+  position: relative;
+  padding: 41px 0;
 }
-
-.ui-widget {
-  font-family: 'Montserrat';
+.ac-header--active svg {
+  transform: rotate(45deg);
 }
-
-.ui-accordion .ui-accordion-header {
-  position: unset;
-  margin: 0;
-  padding: 0;
-  font-size: 24px;
-  color: var(--color-carbon);
-}
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-  border: none;
-  background: transparent;
-}
-
-.ui-accordion .ui-accordion-content {
-  padding: 0;
-  padding-top: 30px;
-}
-
-.ui-widget-content {
+.ac-panel {
+  display: none;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  transition-delay: .3s;
   width: 56%;
   border: none;
   background: transparent;
@@ -875,10 +863,11 @@ h1, h2, h3 {
   line-height: 32px;
 }
 
-.ui-state-active svg {
-  transform: rotate(45deg);
-  top: 7%;
+.ac-panel--active {
+  display: block;
+  opacity: 1;
 }
+
 
 .ac-text {
   margin-bottom: 15px;
